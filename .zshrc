@@ -11,3 +11,7 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias cd..='cd ..'
+alias shesl='cd ~/go/src/github.com/sHesl'
+alias tm='cd ~/go/src/github.com/thought-machine'
+alias uchown='sudo chown -R $(id -u):$(id -g)'
+alias cover='go test -coverprofile=coverage.out && go tool cover -html=coverage.out'
