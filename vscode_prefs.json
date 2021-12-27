@@ -7,7 +7,7 @@
         "cryptoperiod",
         "falco",
         "hashicorp",
-        "hesl",
+        "shesl",
         "initialise",
         "kernelspace",
         "Kubernetes",
@@ -18,7 +18,6 @@
         "qualys",
         "radicalise",
         "resumeability",
-        "s",
         "SNMP",
         "syscall",
         "virtualised"
