@@ -19,5 +19,6 @@ alias src='source ~/.zshrc'
 alias code="open -a /Applications/Visual\ Studio\ Code.app"
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 alias aws-lab-nuke="gh workflow run Nuke -R sHesl/aws-lab-nuke"
+alias myip="curl ifconfig.me"
 
 function gitrecent() { git for-each-ref --sort=-committerdate refs/heads/ | head -n $1; }
