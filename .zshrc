@@ -22,3 +22,18 @@ alias aws-lab-nuke="gh workflow run Nuke -R sHesl/aws-lab-nuke"
 alias myip="curl ifconfig.me"
 
 function gitrecent() { git for-each-ref --sort=-committerdate refs/heads/ | head -n $1; }
+
+cd() {
+    case "$*" in '...')
+        local dir
+        dir="$(git rev-parse --show-toplevel 2>/dev/null)"
+        if [[ $? -ne 0 ]]; then
+          printf '%s\n' "${FUNCNAME[0]}: not inside a git repository"
+          return 1
+        fi
+        set -- "$dir"
+      ;;
+    esac
+
+    builtin cd "$@"
+}
