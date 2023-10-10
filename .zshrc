@@ -12,13 +12,11 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 alias cd..='cd ..'
 alias shesl='cd ~/go/src/github.com/sHesl'
-alias tm='cd ~/go/src/github.com/thought-machine'
 alias uchown='sudo chown -R $(id -u):$(id -g)'
 alias cover='go test -coverprofile=coverage.out && go tool cover -html=coverage.out'
 alias src='source ~/.zshrc'
 alias code="open -a /Applications/Visual\ Studio\ Code.app"
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-alias aws-lab-nuke="gh workflow run Nuke -R sHesl/aws-lab-nuke"
 alias myip="curl ifconfig.me"
 
 function gitrecent() { git for-each-ref --sort=-committerdate refs/heads/ | head -n $1; }
