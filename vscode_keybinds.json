@@ -1,0 +1,75 @@
+[
+    {
+        "key": "cmd+d",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+cmd+up",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+cmd+down",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "ctrl+cmd+left",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+cmd+right",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    {
+        "key": "enter",
+        "command": "list.select",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "cmd+n",
+        "command": "explorer.newFile",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "cmd+n",
+        "command": "explorer.newFile",
+        "when": "breadcrumbs.focus"
+    },
+    {
+        "key": "shift+cmd+0",
+        "command": "workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm",
+        "when": "workbench.scm.active"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "cd '${fileDirname}'\u000D"
+        }
+    },
+    {
+        "key": "ctrl+down",
+        "command": "workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible && isInDiffEditor"
+    },
+]
