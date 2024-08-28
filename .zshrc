@@ -21,17 +21,25 @@ alias myip="curl ifconfig.me"
 
 function gitrecent() { git for-each-ref --sort=-committerdate refs/heads/ | head -n $1; }
 
-cd() {
-    case "$*" in '...')
-        local dir
-        dir="$(git rev-parse --show-toplevel 2>/dev/null)"
-        if [[ $? -ne 0 ]]; then
-          printf '%s\n' "${FUNCNAME[0]}: not inside a git repository"
-          return 1
-        fi
-        set -- "$dir"
-      ;;
-    esac
-
-    builtin cd "$@"
+function enhanced_cd() {
+    if [[ $1 == "." ]]; then
+        builtin cd .
+    elif [[ $1 =~ ^\.\.+$ ]]; then
+        local levels=$((${#1} - 1))
+        local path=$(printf '../%.0s' $(seq 1 $levels))
+        builtin cd $path
+    else
+        builtin cd "$@"
+    fi
 }
+
+alias cd='enhanced_cd'
+alias cd.='cd ..'
+alias cd..='enhanced_cd ...'
+alias cd....='enhanced_cd ....'
+alias cd.....='enhanced_cd .....'
+alias cd......='enhanced_cd ......'
+alias cd.......='enhanced_cd .......'
+alias cd........='enhanced_cd ........'
+alias cd.........='enhanced_cd .........'
+alias cd..........='enhanced_cd ..........'
