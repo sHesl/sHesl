@@ -1,3 +1,5 @@
+eval "$(starship init zsh)"
+
 alias cd..='cd ..'
 alias shesl='cd ~/go/src/github.com/sHesl'
 alias uchown='sudo chown -R $(id -u):$(id -g)'
