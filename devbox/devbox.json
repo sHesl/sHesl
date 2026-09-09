@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+  "packages": [
+    "tmux@latest",
+    "k9s@latest",
+    "kubernetes-helm@3.18.4",
+    "helm-ls@0.4.1",
+    "stern@1.33.0",
+    "terraform@1.12.2",
+    "lima@1.2.1",
+    "ansible-lint@25.8.2",
+    "gonzo@0.3.0",
+    "grpcurl@1.9.3",
+    "sops@latest",
+    "apple-sdk_15@15.2",
+    "ssm-session-manager-plugin@latest",
+    "bash@latest",
+    "pandoc@latest",
+    "opentofu@1.11.8",
+    "gh@latest",
+    "google-cloud-sdk@latest",
+    "gettext@latest",
+    "tcld@latest",
+    "skopeo@latest",
+    "crane@latest",
+    "temporal-cli@1.7.2",
+    "kargo@1.10.7",
+    "step-cli@0.30.6",
+    "qemu@latest",
+    "github:NixOS/nixpkgs/dd2ea746ce040136d557c5f3ae8e6f5c5e59fe8c#graphite-cli",
+    "git-lfs@3.7.1",
+    "awscli2@latest",
+    "antigravity-cli@latest",
+    "argocd@latest",
+    "tailscale@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null"
+    ],
+    "scripts": {
+      "awssso": "cd \"$HOME/.local/share/devbox/global/default/scripts/awssso\" && go run . \"$@\""
+    }
+  }
+}
