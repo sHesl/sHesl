@@ -1,0 +1,23 @@
+[
+  {
+    "bindings": {
+      "f5": "debugger::Continue",
+      "shift-f5": "debugger::Stop",
+      "cmd-shift-f5": "debugger::Restart",
+      "f9": "editor::ToggleBreakpoint",
+      "f10": "debugger::StepOver",
+      "f11": "debugger::StepInto",
+      "shift-f11": "debugger::StepOut",
+      "cmd-k g": "git::Worktree"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "shift-enter": [
+        "terminal::SendText",
+        "\u001b\r"
+      ]
+    }
+  }
+]

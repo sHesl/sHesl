@@ -1,0 +1,13 @@
+[
+  {
+    "label": "claude: branch off latest main",
+    "command": "bash",
+    "args": [
+      "-c",
+      "cd \"$ZED_WORKTREE_ROOT\" && git fetch origin main && RAND=$(cat /dev/urandom | LC_ALL=C tr -dc a-z | head -c 10) && BRANCH=\"shesl-$(date +%y%m%d)-${RAND}\" && git checkout -b \"$BRANCH\" --no-track origin/main && gt track --parent main --no-interactive"
+    ],
+    "hooks": ["create_worktree"],
+    "reveal": "no_focus",
+    "hide": "on_success"
+  }
+]

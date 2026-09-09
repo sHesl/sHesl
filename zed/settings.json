@@ -1,0 +1,136 @@
+{
+  //
+  // Layout
+  //
+  "project_panel": {
+    "dock": "right"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "agent": {
+    "dock": "left",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "diff_view_style": "unified",
+  "format_on_save": "off",
+  "agent_servers": {
+    "claude-acp": {
+      "favorite_config_option_values": {
+        "model": [
+          "claude-fable-5[1m]"
+        ],
+        "mode": [
+          "dontAsk"
+        ]
+      },
+      "type": "registry",
+      "default_config_options": {
+        "fast": false,
+        "effort": "xhigh",
+        "model": "claude-fable-5-1[1m]",
+        "mode": "bypassPermissions"
+      },
+      "env": {
+        "PATH": "/Users/shesl/.proto/shims:/Users/shesl/.proto/bin:/Users/shesl/.local/share/devbox/global/default/.devbox/nix/profile/default/bin:/usr/local/bin:/usr/bin:/bin",
+        "USER": "shesl",
+        "LOGNAME": "shesl",
+        "CLAUDE_CODE_EXECUTABLE": "/Users/shesl/.local/bin/claude"
+      }
+    }
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "base_keymap": "VSCode",
+  "wrap_guides": [80, 100],
+  "preferred_line_length": 80,
+  "soft_wrap": "editor_width",
+  "restore_on_file_reopen": false,
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+
+  //
+  // Styling
+  //
+  "buffer_font_family": "Andale Mono",
+  "buffer_font_size": 15,
+  "buffer_font_features": {
+    "calt": false // Disable ligatures
+  },
+  "ui_font_size": 17,
+  "ui_font_family": ".ZedMono",
+  "terminal": {
+    "font_family": "AnonymicePro Nerd Font Mono",
+    "font_size": 15,
+    "line_height": "standard",
+    "env": {
+      "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+    }
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Macchiato",
+    "dark": "One Dark"
+  },
+  "experimental.theme_overrides": {
+    "syntax": {
+      "comment": {
+        "font_style": "normal"
+      },
+      "package_name": {
+        "font_style": "normal"
+      }
+    }
+  },
+
+  //
+  // Extensions
+  //
+  "auto_install_extensions": {
+    "html": true,
+    "dockerfile": true,
+    "docker-compose": false,
+    "terraform": true
+  },
+
+  //
+  // Languages
+  //
+  "languages": {
+    "Go": {
+      "format_on_save": "on"
+    }
+  },
+  "file_types": {
+    "Helm": ["**/helm/**/*.yaml", "**/helm/**/*.yml", "**/charts/**/*.yaml", "**/charts/**/*.yml"]
+  },
+  "lsp": {
+    "gopls": {
+      "binary": {
+        "path": "/Users/shesl/go/bin/gopls"
+      }
+    },
+    "helm_ls": {
+      "settings": {
+        "helm-ls": {
+          "logLevel": "info",
+          "yamlls": {
+            "enabled": true,
+            "path": "/Users/shesl/code/mimir-proxy/.devbox/nix/profile/default/bin/helm_ls"
+          }
+        }
+      }
+    }
+  }
+}
