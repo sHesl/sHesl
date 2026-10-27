@@ -9,6 +9,10 @@ alias cover='go test -coverprofile=coverage.out && go tool cover -html=coverage.
 alias src='source ~/.zshrc'
 alias myip="curl ifconfig.me"
 alias docker="podman"
+alias main='cd /Users/shesl/code/worktrees/cluster-ops/ruddy-otter/cluster-ops'
+
+# fluiddex viewer on :3000, live-reloading against ~/code/codex + ~/code/fluiddex (takes --port)
+alias fluiddex='bun --cwd=$HOME/.claude/apps/fluiddex run dev'
 
 # Push and watch CI (passes all args through to git push, e.g. gpw --force-with-lease)
 alias gpw='~/.config/starship/git-push-watch.sh'
@@ -16,6 +20,22 @@ alias gpw='~/.config/starship/git-push-watch.sh'
 # PR aliases
 alias pro='gh pr view --web'
 alias prci='gh pr checks --web'
+
+function pr() {
+  local data number url icon checks_url
+  data=$(gh pr view --json number,url,statusCheckRollup 2>/dev/null) || { echo "No PR found"; return 1; }
+  number=$(printf "%s" "$data" | jq -r '.number')
+  url=$(printf "%s" "$data" | jq -r '.url')
+  checks_url="${url}/checks"
+  icon=$(printf "%s" "$data" | jq -r '
+    if (.statusCheckRollup // [] | length) == 0 then "󰁪"
+    elif [.statusCheckRollup[] | select(.conclusion == null)] | length > 0 then "󰁪"
+    elif [.statusCheckRollup[] | select(.conclusion != "SUCCESS" and .conclusion != "NEUTRAL" and .conclusion != "SKIPPED")] | length > 0 then "󰅖"
+    else "󰄬"
+    end
+  ')
+  printf '\033]8;;%s\033\\#%s\033]8;;\033\\ \033]8;;%s\033\\%s\033]8;;\033\\\n' "$url" "$number" "$checks_url" "$icon"
+}
 
 function gitrecent() { git for-each-ref --sort=-committerdate refs/heads/ | head -n $1; }
 
@@ -39,6 +59,13 @@ eval "$(devbox global shellenv --init-hook 2>/dev/null)"
 # re-assert proto LAST so the .prototools-pinned toolchain always wins over nix/devbox
 export PATH="$HOME/.proto/shims:$HOME/.proto/bin:$PATH"
 alias awssso='devbox global run awssso'
+alias copy-stack='devbox global run copy-stack -- -C "$PWD"'
 
 # Fix Logitech mouse scroll wheel by restarting Logi Options+ (macOS relaunches it)
 alias fixmouse='sudo pkill -f "logioptionsplus"'
+
+claude() {
+  eval "$(devbox shellenv 2>/dev/null)"
+  command claude "$@"
+}
+alias show-me='~/code/scripts/show-me.sh'
