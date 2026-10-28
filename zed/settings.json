@@ -22,6 +22,9 @@
   "diff_view_style": "unified",
   "format_on_save": "off",
   "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    },
     "claude-acp": {
       "favorite_config_option_values": {
         "model": [
@@ -35,14 +38,15 @@
       "default_config_options": {
         "fast": false,
         "effort": "xhigh",
-        "model": "claude-fable-5-1[1m]",
+        "model": "opus",
         "mode": "bypassPermissions"
       },
       "env": {
         "PATH": "/Users/shesl/.proto/shims:/Users/shesl/.proto/bin:/Users/shesl/.local/share/devbox/global/default/.devbox/nix/profile/default/bin:/usr/local/bin:/usr/bin:/bin",
         "USER": "shesl",
         "LOGNAME": "shesl",
-        "CLAUDE_CODE_EXECUTABLE": "/Users/shesl/.local/bin/claude"
+        "CLAUDE_CODE_EXECUTABLE": "/Users/shesl/.local/bin/claude",
+        "CLAUDE_CODE_ARTIFACT": "1"
       }
     }
   },
