@@ -37,7 +37,12 @@
     "talosctl@latest",
     "omnictl@latest",
     "docker-client@latest",
-    "nerd-fonts.anonymice@latest"
+    "docker-compose@latest",
+    "docker-buildx@latest",
+    "nerd-fonts.anonymice@latest",
+    "starship@latest",
+    "zellij@latest",
+    "colima@latest"
   ],
   "shell": {
     "init_hook": [
