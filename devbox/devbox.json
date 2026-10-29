@@ -40,9 +40,7 @@
     "docker-compose@latest",
     "docker-buildx@latest",
     "nerd-fonts.anonymice@latest",
-    "starship@latest",
-    "zellij@latest",
-    "colima@latest"
+    "starship@latest"
   ],
   "shell": {
     "init_hook": [
