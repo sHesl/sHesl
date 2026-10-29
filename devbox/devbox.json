@@ -27,7 +27,6 @@
     "kargo@1.10.7",
     "step-cli@0.30.6",
     "qemu@latest",
-    "github:NixOS/nixpkgs/dd2ea746ce040136d557c5f3ae8e6f5c5e59fe8c#graphite-cli",
     "git-lfs@3.7.1",
     "awscli2@latest",
     "antigravity-cli@latest",
