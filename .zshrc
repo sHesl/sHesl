@@ -25,7 +25,6 @@ export PATH="$DEPOT_INSTALL_DIR:$PATH"
 # proto only serves repos with a committed .prototools; devbox goes on after it and wins
 export PATH="$HOME/.proto/shims:$HOME/.proto/bin:$PATH"
 eval "$(devbox global shellenv --init-hook 2>/dev/null)"
-alias awssso='devbox global run awssso'
 alias copy-stack='devbox global run copy-stack -- -C "$PWD"'
 
 # Fix Logitech mouse scroll wheel by restarting Logi Options+ (macOS relaunches it)
