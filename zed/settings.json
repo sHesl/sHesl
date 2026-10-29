@@ -127,7 +127,7 @@
   "lsp": {
     "gopls": {
       "binary": {
-        "path": "/Users/shesl/go/bin/gopls"
+        "path": "/Users/shesl/.local/share/devbox/global/default/.devbox/nix/profile/default/bin/gopls"
       }
     },
     "helm_ls": {

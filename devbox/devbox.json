@@ -40,7 +40,12 @@
     "docker-compose@latest",
     "docker-buildx@latest",
     "nerd-fonts.anonymice@latest",
-    "starship@latest"
+    "starship@latest",
+    "gopls@latest",
+    "delve@latest",
+    "go-tools@latest",
+    "govulncheck@latest",
+    "step-ca@latest"
   ],
   "shell": {
     "init_hook": [
