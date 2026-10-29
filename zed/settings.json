@@ -102,10 +102,15 @@
   // Extensions
   //
   "auto_install_extensions": {
-    "html": true,
+    "catppuccin": true,
+    "codebook": true,
     "dockerfile": true,
     "docker-compose": false,
-    "terraform": true
+    "helm": true,
+    "html": true,
+    "proto": true,
+    "terraform": true,
+    "toml": true
   },
 
   //
@@ -126,12 +131,14 @@
       }
     },
     "helm_ls": {
+      "binary": {
+        "path": "/Users/shesl/.local/share/devbox/global/default/.devbox/nix/profile/default/bin/helm_ls"
+      },
       "settings": {
         "helm-ls": {
           "logLevel": "info",
           "yamlls": {
-            "enabled": true,
-            "path": "/Users/shesl/code/mimir-proxy/.devbox/nix/profile/default/bin/helm_ls"
+            "enabled": true
           }
         }
       }
