@@ -89,7 +89,6 @@
       "echo 'Welcome to devbox!' > /dev/null"
     ],
     "scripts": {
-      "awssso":     "cd \"$HOME/.local/share/devbox/global/default/scripts/awssso\" && go run . \"$@\"",
       "copy-stack": "\"$HOME/.local/share/devbox/global/default/scripts/copy-stack/copy-stack.sh\" \"$@\"",
       "fonts":      "find \"$HOME/.local/share/devbox/global/default/.devbox/nix/profile/default/share/fonts\" -name '*.ttf' -exec cp -f {} \"$HOME/Library/Fonts/\" \\;"
     }
