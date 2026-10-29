@@ -3,40 +3,7 @@ eval "$(starship init zsh)"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 alias cd..='cd ..'
-alias shesl='cd ~/go/src/github.com/sHesl'
-alias uchown='sudo chown -R $(id -u):$(id -g)'
-alias cover='go test -coverprofile=coverage.out && go tool cover -html=coverage.out'
 alias src='source ~/.zshrc'
-alias myip="curl ifconfig.me"
-alias docker="podman"
-alias 4claude='~/code/scripts/4claude.sh'
-alias main='cd /Users/shesl/code/worktrees/cluster-ops/ruddy-otter/cluster-ops'
-
-# fluiddex viewer on :3000, live-reloading against ~/code/codex + ~/code/fluiddex (takes --port)
-alias fluiddex='bun --cwd=$HOME/.claude/apps/fluiddex run dev'
-
-# Push and watch CI (passes all args through to git push, e.g. gpw --force-with-lease)
-alias gpw='~/.config/starship/git-push-watch.sh'
-
-# PR aliases
-alias pro='gh pr view --web'
-alias prci='gh pr checks --web'
-
-function pr() {
-  local data number url icon checks_url
-  data=$(gh pr view --json number,url,statusCheckRollup 2>/dev/null) || { echo "No PR found"; return 1; }
-  number=$(printf "%s" "$data" | jq -r '.number')
-  url=$(printf "%s" "$data" | jq -r '.url')
-  checks_url="${url}/checks"
-  icon=$(printf "%s" "$data" | jq -r '
-    if (.statusCheckRollup // [] | length) == 0 then "󰁪"
-    elif [.statusCheckRollup[] | select(.conclusion == null)] | length > 0 then "󰁪"
-    elif [.statusCheckRollup[] | select(.conclusion != "SUCCESS" and .conclusion != "NEUTRAL" and .conclusion != "SKIPPED")] | length > 0 then "󰅖"
-    else "󰄬"
-    end
-  ')
-  printf '\033]8;;%s\033\\#%s\033]8;;\033\\ \033]8;;%s\033\\%s\033]8;;\033\\\n' "$url" "$number" "$checks_url" "$icon"
-}
 
 function gitrecent() { git for-each-ref --sort=-committerdate refs/heads/ | head -n $1; }
 
@@ -68,4 +35,3 @@ claude() {
   eval "$(devbox shellenv 2>/dev/null)"
   command claude "$@"
 }
-alias show-me='~/code/scripts/show-me.sh'
