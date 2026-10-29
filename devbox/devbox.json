@@ -36,7 +36,8 @@
     "_1password-cli@latest",
     "talosctl@latest",
     "omnictl@latest",
-    "docker-client@latest"
+    "docker-client@latest",
+    "nerd-fonts.anonymice@latest"
   ],
   "shell": {
     "init_hook": [
@@ -44,7 +45,8 @@
     ],
     "scripts": {
       "awssso":     "cd \"$HOME/.local/share/devbox/global/default/scripts/awssso\" && go run . \"$@\"",
-      "copy-stack": "\"$HOME/.local/share/devbox/global/default/scripts/copy-stack/copy-stack.sh\" \"$@\""
+      "copy-stack": "\"$HOME/.local/share/devbox/global/default/scripts/copy-stack/copy-stack.sh\" \"$@\"",
+      "fonts":      "find \"$HOME/.local/share/devbox/global/default/.devbox/nix/profile/default/share/fonts\" -name '*.ttf' -exec cp -f {} \"$HOME/Library/Fonts/\" \\;"
     }
   }
 }
