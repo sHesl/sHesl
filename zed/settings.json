@@ -42,7 +42,7 @@
         "mode": "bypassPermissions"
       },
       "env": {
-        "PATH": "/Users/shesl/.proto/shims:/Users/shesl/.proto/bin:/Users/shesl/.local/share/devbox/global/default/.devbox/nix/profile/default/bin:/usr/local/bin:/usr/bin:/bin",
+        "PATH": "/Users/shesl/.local/share/devbox/global/default/.devbox/nix/profile/default/bin:/Users/shesl/.proto/shims:/Users/shesl/.proto/bin:/usr/local/bin:/usr/bin:/bin",
         "USER": "shesl",
         "LOGNAME": "shesl",
         "CLAUDE_CODE_EXECUTABLE": "/Users/shesl/.local/bin/claude",

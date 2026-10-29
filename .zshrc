@@ -9,6 +9,7 @@ alias cover='go test -coverprofile=coverage.out && go tool cover -html=coverage.
 alias src='source ~/.zshrc'
 alias myip="curl ifconfig.me"
 alias docker="podman"
+alias 4claude='~/code/scripts/4claude.sh'
 alias main='cd /Users/shesl/code/worktrees/cluster-ops/ruddy-otter/cluster-ops'
 
 # fluiddex viewer on :3000, live-reloading against ~/code/codex + ~/code/fluiddex (takes --port)
@@ -54,10 +55,9 @@ export MOON_SUMMARY=normal
 export DEPOT_INSTALL_DIR="$HOME/.depot/bin"
 export PATH="$DEPOT_INSTALL_DIR:$PATH"
 
-# devbox global: personal ambient tooling on PATH in every shell (worktree-independent)
-eval "$(devbox global shellenv --init-hook 2>/dev/null)"
-# re-assert proto LAST so the .prototools-pinned toolchain always wins over nix/devbox
+# proto only serves repos with a committed .prototools; devbox goes on after it and wins
 export PATH="$HOME/.proto/shims:$HOME/.proto/bin:$PATH"
+eval "$(devbox global shellenv --init-hook 2>/dev/null)"
 alias awssso='devbox global run awssso'
 alias copy-stack='devbox global run copy-stack -- -C "$PWD"'
 
